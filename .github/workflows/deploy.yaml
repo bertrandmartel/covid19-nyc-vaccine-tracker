@@ -15,6 +15,7 @@ jobs:
           python-version: '3.x'
       - name: Run script
         run: |
+          pip install -r requirements.txt
           python extract.py
       - name: Commit report
         run: |
