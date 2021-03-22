@@ -1,14 +1,19 @@
 from tableauscraper import TableauScraper as TS
 import os
 import time
+import sys
+
+currentPath = os.path.dirname(os.path.abspath(__file__))
+
+if len(sys.argv) > 1:
+    currentPath = os.path.join(currentPath, sys.argv[1])
 
 url = 'https://public.tableau.com/views/COVID-19VaccineTrackerDashboard_16153822244270/Dosesadministered'
 
 ts = TS()
 ts.loads(url)
 
-currentFolder = time.strftime("%Y-%m-%d")
-currentPath = os.path.dirname(os.path.abspath(__file__))
+currentFolder = os.path.join(currentPath, time.strftime("%Y-%m-%d"))
 
 os.makedirs(currentFolder, exist_ok=True)
 
