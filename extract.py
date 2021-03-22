@@ -35,7 +35,7 @@ dailyWb = rootWb.setParameter("Cumulative + Daily", "Daily trends")
 ws = dailyWb.getWorksheet("Daily trends (2)")
 if not ws.data.empty:
     ws.data.to_csv(buildFilePath(
-        currentFolder, "Daily trends (2)"), index=False)
+        currentFolder, "Daily trends (2).csv"), index=False)
 
 allAdults = rootWb.goToSheet("All Adults")
 for t in allAdults.worksheets:
