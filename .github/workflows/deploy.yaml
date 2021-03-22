@@ -1,6 +1,8 @@
 name: Deploy
 on:
   push:
+    branches:
+      - master
   schedule:
     - cron:  '0 5 * * *'
 jobs:
@@ -21,6 +23,7 @@ jobs:
         run: |
           git config --global user.name 'Bertrand Martel'
           git config --global user.email 'bertrandmartel@users.noreply.github.com'
+          git add -A
           git checkout deploy
           git commit -am "Automated deploy"
           git push
