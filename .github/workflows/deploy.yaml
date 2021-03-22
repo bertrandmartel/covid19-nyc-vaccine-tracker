@@ -1,0 +1,24 @@
+name: Deploy
+on:
+  push:
+  schedule:
+    - cron:  '0 5 * * *'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Run script
+        run: |
+          python extract.py
+      - name: Commit report
+        run: |
+          git config --global user.name 'Bertrand Martel'
+          git config --global user.email 'bertrandmartel@users.noreply.github.com'
+          git commit -am "Automated deploy"
+          git push
