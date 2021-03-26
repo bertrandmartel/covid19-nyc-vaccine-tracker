@@ -1,0 +1,26 @@
+name: Report
+on:
+  schedule:
+    - cron:  '00 11 * * *'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Report
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Run script
+        run: |
+          pip install -r requirements.txt
+          python extract.py deploy
+      - name: Commit report
+        run: |
+          git config --global user.name 'Bertrand Martel'
+          git config --global user.email 'bertrandmartel@users.noreply.github.com'
+          git add -A
+          git checkout master
+          git commit -am "Automated deploy"
+          git push
