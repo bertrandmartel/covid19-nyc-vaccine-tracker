@@ -1,6 +1,6 @@
 # Covid19 NYC Vaccine Tracker
 
-[![CI](https://github.com/bertrandmartel/covid19-nyc-vaccine-tracker/workflows/Deploy/badge.svg?branch=master)](https://github.com/bertrandmartel/covid19-nyc-vaccine-tracker/actions)
+[![CI](https://github.com/bertrandmartel/covid19-nyc-vaccine-tracker/workflows/Report/badge.svg)](https://github.com/bertrandmartel/covid19-nyc-vaccine-tracker/actions)
 
 This runs every day and extracts data from Tableau from [NYC Vaccine Tracker](https://public.tableau.com/profile/integrated.data.team#!/vizhome/COVID-19VaccineTrackerDashboard_16153822244270/Dosesadministered) public Tableau website
 
