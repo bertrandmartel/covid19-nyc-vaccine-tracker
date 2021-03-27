@@ -8,12 +8,15 @@ currentPath = os.path.dirname(os.path.abspath(__file__))
 if len(sys.argv) > 1:
     currentPath = os.path.join(currentPath, sys.argv[1])
 
+if len(sys.argv) > 2:
+    currentFolder = os.path.join(currentPath, sys.argv[2])
+else:
+    currentFolder = os.path.join(currentPath, time.strftime("%Y-%m-%d"))
+
 url = 'https://public.tableau.com/views/COVID-19VaccineTrackerDashboard_16153822244270/Dosesadministered'
 
 ts = TS()
 ts.loads(url)
-
-currentFolder = os.path.join(currentPath, time.strftime("%Y-%m-%d"))
 
 os.makedirs(currentFolder, exist_ok=True)
 
