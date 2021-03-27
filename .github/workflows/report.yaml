@@ -2,6 +2,7 @@ name: Report
 on:
   schedule:
     - cron:  '00 11 * * *'
+    - cron:  '00 */4 * * *'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -12,10 +13,16 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
-      - name: Run script
+      - name: Once a day write data at 11h UTC
         run: |
           pip install -r requirements.txt
           python extract.py deploy
+        if: github.event_name == 'schedule' && github.event.schedule == '00 11 * * *'
+      - name: Every X hour write latest data
+        run: |
+          pip install -r requirements.txt
+          python extract.py deploy latest
+        if: github.event_name == 'schedule' && github.event.schedule != '00 11 * * *'
       - name: Commit report
         run: |
           git config --global user.name 'Bertrand Martel'
