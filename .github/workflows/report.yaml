@@ -1,8 +1,8 @@
 name: Report
 on:
   schedule:
-    - cron:  '00 11 * * *'
-    - cron:  '00 11-15 * * *'
+    - cron:  '00 15 * * *'
+    - cron:  '00 15-17 * * *'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,12 +17,12 @@ jobs:
         run: |
           pip install -r requirements.txt
           python extract.py deploy
-        if: github.event_name == 'schedule' && github.event.schedule == '00 11 * * *'
+        if: github.event_name == 'schedule' && github.event.schedule == '00 15 * * *'
       - name: Every X hour write latest data
         run: |
           pip install -r requirements.txt
           python extract.py deploy latest
-        if: github.event_name == 'schedule' && github.event.schedule != '00 11 * * *'
+        if: github.event_name == 'schedule' && github.event.schedule != '00 15 * * *'
       - name: Commit report
         run: |
           git config --global user.name 'Bertrand Martel'
