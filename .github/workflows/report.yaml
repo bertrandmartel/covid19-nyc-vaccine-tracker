@@ -21,6 +21,7 @@ jobs:
           pip install -r requirements.txt
           python extract.py deploy latest
       - name: Commit report
+        continue-on-error: true
         run: |
           git config --global user.name 'Bertrand Martel'
           git config --global user.email 'bertrandmartel@users.noreply.github.com'
