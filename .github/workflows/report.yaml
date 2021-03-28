@@ -1,5 +1,6 @@
 name: Report
 on:
+  push:
   schedule:
     - cron:  '00 15-17 * * *'
 jobs:
@@ -23,9 +24,9 @@ jobs:
       - name: Commit report
         continue-on-error: true
         run: |
-          git config --global user.name 'Bertrand Martel'
-          git config --global user.email 'bertrandmartel@users.noreply.github.com'
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
           git add -A
           git checkout master
-          git commit -am "Automated deploy"
+          git commit --allow-empty -am "Automated deploy"
           git push
