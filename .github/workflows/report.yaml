@@ -21,10 +21,11 @@ jobs:
           pip install -r requirements.txt
           python extract.py deploy latest
       - name: Commit report
+        continue-on-error: true
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git add -A
           git checkout master
-          git commit --allow-empty -am "Automated deploy"
+          git commit -am "Automated deploy"
           git push
