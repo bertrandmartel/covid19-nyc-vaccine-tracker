@@ -13,7 +13,7 @@ if len(sys.argv) > 2:
 else:
     currentFolder = os.path.join(currentPath, time.strftime("%Y-%m-%d"))
 
-url = 'https://public.tableau.com/views/COVID-19VaccineTrackerDashboard_16153822244270/Dosesadministered'
+url = 'https://public.tableau.com/views/COVID-19VaccineTrackerDashboard_16153822244270/DosesAdministered'
 
 ts = TS()
 ts.loads(url)
