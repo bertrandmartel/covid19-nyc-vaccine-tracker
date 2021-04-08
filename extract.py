@@ -40,31 +40,51 @@ if not ws.data.empty:
     ws.data.to_csv(buildFilePath(
         currentFolder, "Daily trends (2).csv"), index=False)
 
-allAdults = rootWb.goToSheet("All Adults")
-for t in allAdults.worksheets:
+allPeople = rootWb.goToSheet("All People Vaccination")
+for t in allPeople.worksheets:
     print(f"worksheet name : {t.name}")
     if not t.data.empty:
         t.data.to_csv(buildFilePath(
             currentFolder, f'{t.name}.csv'), index=False)
 
-nycAdults = rootWb.goToSheet("NYC Adults")
-for t in nycAdults.worksheets:
+nycVaxCoverage = rootWb.goToSheet("NYC Vax Coverage")
+
+os.makedirs(os.path.join(currentFolder, "coverage"), exist_ok=True)
+os.makedirs(os.path.join(currentFolder, "coverage", "adults"), exist_ok=True)
+os.makedirs(os.path.join(currentFolder, "coverage", "all"), exist_ok=True)
+
+# adults covrage
+for t in nycVaxCoverage.worksheets:
     print(f"worksheet name : {t.name}")
     if not t.data.empty:
         t.data.to_csv(buildFilePath(
-            currentFolder, f'{t.name}.csv'), index=False)
+            os.path.join(currentFolder, "coverage", "adults"), f'{t.name}.csv'), index=False)
+
+# all coverage
+vaxCoverageAll = nycVaxCoverage.getWorksheet(
+    "Sheet 22").setFilter("Age Group", "All")
+for t in vaxCoverageAll.worksheets:
+    print(f"worksheet name : {t.name}")
+    if not t.data.empty:
+        t.data.to_csv(buildFilePath(
+            os.path.join(currentFolder, "coverage", "all"), f'{t.name}.csv'), index=False)
 
 geography = rootWb.goToSheet("Geography")
 
 os.makedirs(os.path.join(currentFolder, "geography"), exist_ok=True)
 
-geography.getWorksheet("Map ZIP").data.to_csv(
-    buildFilePath(os.path.join(currentFolder, "geography"), 'Map ZIP.csv'), index=False)
-
 os.makedirs(os.path.join(currentFolder, "geography",
                          "at least one dose"), exist_ok=True)
 os.makedirs(os.path.join(currentFolder, "geography",
+                         "at least one dose", "adults"), exist_ok=True)
+os.makedirs(os.path.join(currentFolder, "geography",
+                         "at least one dose", "all"), exist_ok=True)
+os.makedirs(os.path.join(currentFolder, "geography",
                          "fully vaccinated"), exist_ok=True)
+os.makedirs(os.path.join(currentFolder, "geography",
+                         "fully vaccinated", "adults"), exist_ok=True)
+os.makedirs(os.path.join(currentFolder, "geography",
+                         "fully vaccinated", "all"), exist_ok=True)
 
 
 def processRaceSex(wb, dir, sheetName):
@@ -74,12 +94,51 @@ def processRaceSex(wb, dir, sheetName):
         currentPath, index=False)
 
 
-processRaceSex(geography, "at least one dose", "AgePriority_RaceEth")
-processRaceSex(geography, "at least one dose", "SexPriority_RaceEth")
-processRaceSex(geography, "at least one dose", "RacePriority_RaceEth")
+# 1) at least one dose - adults
+processRaceSex(geography, os.path.join(
+    "at least one dose", "adults"), "AgePriority_RaceEth")
+processRaceSex(geography, os.path.join(
+    "at least one dose", "adults"), "SexPriority_RaceEth")
+processRaceSex(geography, os.path.join(
+    "at least one dose", "adults"), "RacePriority_RaceEth")
+processRaceSex(geography, os.path.join(
+    "at least one dose", "adults"), "Map ZIP")
 
-wb = geography.setParameter("Select Vaccine Indicator", "Fully Vaccinated")
+# 2) fully vaccinated - adults
+wb = geography.setParameter("Select Vaccine Indicator", "% Fully Vaccinated")
 
-processRaceSex(wb, "fully vaccinated", "AgePriority_RaceEth")
-processRaceSex(wb, "fully vaccinated", "SexPriority_RaceEth")
-processRaceSex(wb, "fully vaccinated", "RacePriority_RaceEth")
+processRaceSex(wb, os.path.join("fully vaccinated",
+                                "adults"), "AgePriority_RaceEth")
+processRaceSex(wb, os.path.join("fully vaccinated",
+                                "adults"), "SexPriority_RaceEth")
+processRaceSex(wb, os.path.join("fully vaccinated",
+                                "adults"), "RacePriority_RaceEth")
+
+#  at least one dose - zip map
+wb = geography.setParameter("Select Indicator - Map", "% Fully Vaccinated")
+processRaceSex(wb, os.path.join(
+    "fully vaccinated", "adults"), "Map ZIP")
+
+# all
+wb = geography.getWorksheet("AgePriority_RaceEth").setFilter("AGE", "All")
+processRaceSex(wb, os.path.join(
+    "fully vaccinated", "all"), "AgePriority_RaceEth")
+processRaceSex(wb, os.path.join(
+    "fully vaccinated", "all"), "SexPriority_RaceEth")
+processRaceSex(wb, os.path.join(
+    "fully vaccinated", "all"), "RacePriority_RaceEth")
+
+wb = geography.setParameter("Select Vaccine Indicator", "% At Least 1 Dose")
+processRaceSex(wb, os.path.join(
+    "at least one dose", "all"), "AgePriority_RaceEth")
+processRaceSex(wb, os.path.join(
+    "at least one dose", "all"), "SexPriority_RaceEth")
+processRaceSex(wb, os.path.join(
+    "at least one dose", "all"), "RacePriority_RaceEth")
+
+wb = geography.getWorksheet("Map ZIP").setFilter("AGE_GROUP", "All")
+processRaceSex(wb, os.path.join(
+    "fully vaccinated", "all"), "Map ZIP")
+wb = geography.setParameter("Select Indicator - Map", "% At Least 1 Dose")
+processRaceSex(wb, os.path.join(
+    "at least one dose", "all"), "Map ZIP")
