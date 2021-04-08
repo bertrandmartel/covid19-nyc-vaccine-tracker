@@ -1,0 +1,13 @@
+RESIDENCY_STATE (group)-value,RESIDENCY_STATE (group)-alias,Measure Names-value,Measure Names-alias,Measure Values-alias
+%all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N_FULLY_VACCINATED_CUMULATIVE (copy)_905223531003547648:qk],% fully vaccinated,100%
+Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N_FULLY_VACCINATED_CUMULATIVE (copy)_905223531003547648:qk],% fully vaccinated,18%
+NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N_FULLY_VACCINATED_CUMULATIVE (copy)_905223531003547648:qk],% fully vaccinated,82%
+%all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully vaccinated,"1,842,482"
+Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully vaccinated,"337,601"
+NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully vaccinated,"1,504,881"
+%all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N At least 1 dose (copy)_99923633591590919:qk],% with at least 1 dose,100%
+Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N At least 1 dose (copy)_99923633591590919:qk],% with at least 1 dose,19%
+NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N At least 1 dose (copy)_99923633591590919:qk],% with at least 1 dose,81%
+%all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],# with at least 1 dose,"2,994,012"
+Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],# with at least 1 dose,"560,009"
+NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],# with at least 1 dose,"2,434,003"

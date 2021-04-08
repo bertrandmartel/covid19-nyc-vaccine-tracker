@@ -1,0 +1,25 @@
+Demo (group)-value,Demo (group)-alias,Borough-value,Borough-alias,AGG(Select indicator %)-alias
+White,White,STATEN ISLAND,Staten Island,0.2236641296589361
+Latino,Latino,STATEN ISLAND,Staten Island,0.1155012033209155
+Black,Black,STATEN ISLAND,Staten Island,0.1142659590180253
+Asian,Asian,STATEN ISLAND,Staten Island,0.2297119090286914
+White,White,QUEENS,Queens,0.1901344798249917
+Latino,Latino,QUEENS,Queens,0.112272794422391
+Black,Black,QUEENS,Queens,0.105796590461783
+Asian,Asian,QUEENS,Queens,0.2166327985013792
+White,White,MANHATTAN,Manhattan,0.2739402310433761
+Latino,Latino,MANHATTAN,Manhattan,0.1565089280270827
+Black,Black,MANHATTAN,Manhattan,0.1478397803981417
+Asian,Asian,MANHATTAN,Manhattan,0.199751443663642
+White,White,BROOKLYN,Brooklyn,0.1707704464755934
+Latino,Latino,BROOKLYN,Brooklyn,0.1015016107877789
+Black,Black,BROOKLYN,Brooklyn,0.1025559183290382
+Asian,Asian,BROOKLYN,Brooklyn,0.1844993802215596
+White,White,THE BRONX,Bronx,0.224976178293242
+Latino,Latino,THE BRONX,Bronx,0.1117913564698887
+Black,Black,THE BRONX,Bronx,0.1212241861611771
+Asian,Asian,THE BRONX,Bronx,0.214006274589612
+White,White,%all%,%all%,0.2146098243347351
+Latino,Latino,%all%,%all%,0.118089438715682
+Black,Black,%all%,%all%,0.1128447806588152
+Asian,Asian,%all%,%all%,0.2059558726061665
