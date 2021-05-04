@@ -53,21 +53,21 @@ os.makedirs(os.path.join(currentFolder, "coverage"), exist_ok=True)
 os.makedirs(os.path.join(currentFolder, "coverage", "adults"), exist_ok=True)
 os.makedirs(os.path.join(currentFolder, "coverage", "all"), exist_ok=True)
 
-# adults covrage
+# all covrage
 for t in nycVaxCoverage.worksheets:
     print(f"worksheet name : {t.name}")
     if not t.data.empty:
         t.data.to_csv(buildFilePath(
-            os.path.join(currentFolder, "coverage", "adults"), f'{t.name}.csv'), index=False)
+            os.path.join(currentFolder, "coverage", "all"), f'{t.name}.csv'), index=False)
 
-# all coverage
+# adults coverage
 vaxCoverageAll = nycVaxCoverage.getWorksheet(
-    "Sheet 22").setFilter("Age Group", "All")
+    "Sheet 22").setFilter("Age Group", "18+")
 for t in vaxCoverageAll.worksheets:
     print(f"worksheet name : {t.name}")
     if not t.data.empty:
         t.data.to_csv(buildFilePath(
-            os.path.join(currentFolder, "coverage", "all"), f'{t.name}.csv'), index=False)
+            os.path.join(currentFolder, "coverage", "adults"), f'{t.name}.csv'), index=False)
 
 geography = rootWb.goToSheet("Geography")
 

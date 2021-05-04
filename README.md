@@ -56,6 +56,10 @@ From 08/04/2021, tableau data has added age filters to some sheets: `18+` and `A
 
 # Archive
 
+## Update 04/05/2021
+
+In worksheet NYC vax, default filter is now set at `All` instead of `18+`
+
 ## Update 26/03/2021
 
 ```
