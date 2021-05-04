@@ -1,1 +1,1 @@
-tableauscraper==0.1.6
+tableauscraper==0.1.11
