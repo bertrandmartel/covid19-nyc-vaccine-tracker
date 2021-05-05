@@ -2,12 +2,12 @@ RESIDENCY_STATE (group)-value,RESIDENCY_STATE (group)-alias,Measure Names-value,
 %all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N_FULLY_VACCINATED_CUMULATIVE (copy)_905223531003547648:qk],% Fully Vaccinated,100%
 Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N_FULLY_VACCINATED_CUMULATIVE (copy)_905223531003547648:qk],% Fully Vaccinated,15%
 NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N_FULLY_VACCINATED_CUMULATIVE (copy)_905223531003547648:qk],% Fully Vaccinated,85%
-%all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully Vaccinated (count),"3,132,728"
-Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully Vaccinated (count),"463,264"
-NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully Vaccinated (count),"2,669,464"
+%all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully Vaccinated (count),"3,189,627"
+Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully Vaccinated (count),"467,135"
+NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:N_FULLY_VACCINATED_CUMULATIVE:qk],Fully Vaccinated (count),"2,722,492"
 %all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N At least 1 dose (copy)_99923633591590919:qk],% At Least 1 Dose,100%
 Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N At least 1 dose (copy)_99923633591590919:qk],% At Least 1 Dose,16%
 NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[pcto:sum:N At least 1 dose (copy)_99923633591590919:qk],% At Least 1 Dose,84%
-%all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],At Least 1 Dose (count),"4,336,918"
-Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],At Least 1 Dose (count),"675,450"
-NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],At Least 1 Dose (count),"3,661,468"
+%all%,All,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],At Least 1 Dose (count),"4,363,256"
+Non-NYC,Non-NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],At Least 1 Dose (count),"677,643"
+NYC,NYC,[federated.04ghtom09lio1s11qfawz0n6jtw7 (copy 3)].[sum:Calculation_99923633591324678:qk],At Least 1 Dose (count),"3,685,613"
