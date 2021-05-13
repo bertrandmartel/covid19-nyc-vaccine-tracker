@@ -94,51 +94,51 @@ def processRaceSex(wb, dir, sheetName):
         currentPath, index=False)
 
 
-# 1) at least one dose - adults
+# 1) at least one dose - all
 processRaceSex(geography, os.path.join(
-    "at least one dose", "adults"), "AgePriority_RaceEth")
+    "at least one dose", "all"), "AgePriority_RaceEth")
 processRaceSex(geography, os.path.join(
-    "at least one dose", "adults"), "SexPriority_RaceEth")
+    "at least one dose", "all"), "SexPriority_RaceEth")
 processRaceSex(geography, os.path.join(
-    "at least one dose", "adults"), "RacePriority_RaceEth")
+    "at least one dose", "all"), "RacePriority_RaceEth")
 processRaceSex(geography, os.path.join(
-    "at least one dose", "adults"), "Map ZIP")
+    "at least one dose", "all"), "Map ZIP")
 
-# 2) fully vaccinated - adults
+# 2) fully vaccinated - all
 wb = geography.setParameter("Select Vaccine Indicator", "% Fully Vaccinated")
 
 processRaceSex(wb, os.path.join("fully vaccinated",
-                                "adults"), "AgePriority_RaceEth")
+                                "all"), "AgePriority_RaceEth")
 processRaceSex(wb, os.path.join("fully vaccinated",
-                                "adults"), "SexPriority_RaceEth")
+                                "all"), "SexPriority_RaceEth")
 processRaceSex(wb, os.path.join("fully vaccinated",
-                                "adults"), "RacePriority_RaceEth")
+                                "all"), "RacePriority_RaceEth")
 
 #  at least one dose - zip map
 wb = geography.setParameter("Select Indicator - Map", "% Fully Vaccinated")
 processRaceSex(wb, os.path.join(
-    "fully vaccinated", "adults"), "Map ZIP")
+    "fully vaccinated", "all"), "Map ZIP")
 
-# all
-wb = geography.getWorksheet("AgePriority_RaceEth").setFilter("AGE", "All")
+# 18+
+wb = geography.getWorksheet("AgePriority_RaceEth").setFilter("AGE", "18+")
 processRaceSex(wb, os.path.join(
-    "fully vaccinated", "all"), "AgePriority_RaceEth")
+    "fully vaccinated", "adults"), "AgePriority_RaceEth")
 processRaceSex(wb, os.path.join(
-    "fully vaccinated", "all"), "SexPriority_RaceEth")
+    "fully vaccinated", "adults"), "SexPriority_RaceEth")
 processRaceSex(wb, os.path.join(
-    "fully vaccinated", "all"), "RacePriority_RaceEth")
+    "fully vaccinated", "adults"), "RacePriority_RaceEth")
 
 wb = geography.setParameter("Select Vaccine Indicator", "% At Least 1 Dose")
 processRaceSex(wb, os.path.join(
-    "at least one dose", "all"), "AgePriority_RaceEth")
+    "at least one dose", "adults"), "AgePriority_RaceEth")
 processRaceSex(wb, os.path.join(
-    "at least one dose", "all"), "SexPriority_RaceEth")
+    "at least one dose", "adults"), "SexPriority_RaceEth")
 processRaceSex(wb, os.path.join(
-    "at least one dose", "all"), "RacePriority_RaceEth")
+    "at least one dose", "adults"), "RacePriority_RaceEth")
 
-wb = geography.getWorksheet("Map ZIP").setFilter("AGE_GROUP", "All")
+wb = geography.getWorksheet("Map ZIP").setFilter("AGE_GROUP", "18+")
 processRaceSex(wb, os.path.join(
-    "fully vaccinated", "all"), "Map ZIP")
+    "fully vaccinated", "adults"), "Map ZIP")
 wb = geography.setParameter("Select Indicator - Map", "% At Least 1 Dose")
 processRaceSex(wb, os.path.join(
-    "at least one dose", "all"), "Map ZIP")
+    "at least one dose", "adults"), "Map ZIP")
