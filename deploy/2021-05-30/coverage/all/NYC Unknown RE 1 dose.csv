@@ -1,0 +1,2 @@
+SUM(At least 1 dose)-alias,SUM(Denominator % Unknown for NYC)-alias,AGG(% at least 1 dose filtered NYC)-alias
+469080.0,4111881.0,0.1140791769022499
