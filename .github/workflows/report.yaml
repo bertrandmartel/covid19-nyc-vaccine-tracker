@@ -1,8 +1,4 @@
 name: Report
-on:
-  push:
-  schedule:
-    - cron:  '00 15-17 * * *'
 jobs:
   test:
     runs-on: ubuntu-latest
